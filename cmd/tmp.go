@@ -6,9 +6,9 @@ import (
 )
 
 const (
-	Unkow  = 0
-	Female = 1
-	Male   = 2
+	Unknown = 0
+	Female  = 1
+	Male    = 2
 )
 
 const (
@@ -21,7 +21,7 @@ func main() {
 	const conStr string = "const string"
 	const conStr2 = "const string 2"
 
-	fmt.Println(conStr, conStr2, Unkow, Female, Male, One, Two)
+	fmt.Println(conStr, conStr2, Unknown, Female, Male, One, Two)
 
 	_, b, c := multi_()
 
