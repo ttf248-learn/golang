@@ -40,10 +40,39 @@ func main() {
 
 	if len(os.Args) > 1 {
 		fmt.Println("ch1 message", os.Args[1])
+	} else {
+		fmt.Println("ch1 message default")
 	}
+
+	if b == 2 {
+		if c == "return message" {
+			fmt.Println("b:", b, "c:", c)
+		} else {
+			fmt.Println("c is not equal return message")
+		}
+	} else {
+		fmt.Println("b is not equal 2")
+	}
+
+	funcSwitchTest("A")
+	funcSwitchTest("B")
+	funcSwitchTest("")
 }
 
 func multi_() (int, int, string) {
-	a, b, c := 1, 2, "return message"
+	a, b, c := 1, 2, "return message 1"
 	return a, b, c
+}
+
+func funcSwitchTest(grade string) {
+	switch grade {
+	case "A":
+		fmt.Println("优秀")
+	case "B":
+		fmt.Println("良好")
+	case "C":
+		fmt.Println("及格")
+	default:
+		fmt.Println("未知")
+	}
 }
