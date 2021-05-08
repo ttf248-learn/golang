@@ -57,6 +57,21 @@ func main() {
 	funcSwitchTest("A")
 	funcSwitchTest("B")
 	funcSwitchTest("")
+
+	closure := funcGetNewLamda()
+	fmt.Println(closure(1))
+	fmt.Println(closure(1))
+
+	closure = funcGetNewLamda()
+	fmt.Println(closure(1))
+	fmt.Println(closure(1))
+
+	closure = func(i int) int {
+		j := 1
+		return j + i
+	}
+	fmt.Println(closure(1))
+	fmt.Println(closure(1))
 }
 
 func multi_() (int, int, string) {
@@ -74,5 +89,13 @@ func funcSwitchTest(grade string) {
 		fmt.Println("及格")
 	default:
 		fmt.Println("未知")
+	}
+}
+
+func funcGetNewLamda() func(int) int {
+	i := 0
+	return func(in int) int {
+		i++
+		return in + i
 	}
 }
