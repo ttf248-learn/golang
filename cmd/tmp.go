@@ -72,6 +72,12 @@ func main() {
 	}
 	fmt.Println(closure(1))
 	fmt.Println(closure(1))
+
+	var anyName Username
+	anyName = new(XiangName)
+	anyName.getName()
+	anyName = new(TianName)
+	anyName.getName()
 }
 
 func multi_() (int, int, string) {
@@ -98,4 +104,22 @@ func funcGetNewLamda() func(int) int {
 		i++
 		return in + i
 	}
+}
+
+type Username interface {
+	getName()
+}
+
+type XiangName struct {
+}
+
+func (xiangName XiangName) getName() {
+	fmt.Println("xiang")
+}
+
+type TianName struct {
+}
+
+func (tianName TianName) getName() {
+	fmt.Println("tian")
 }
