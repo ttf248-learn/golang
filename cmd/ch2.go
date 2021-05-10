@@ -32,6 +32,12 @@ func strChannelWorker(ch chan string, input string) {
 	ch <- input
 }
 
+func someWorker(ch chan bool) {
+	fmt.Println("before some worker")
+	ch <- true
+	fmt.Println("after some worker")
+}
+
 func main() {
 	fmt.Println("ch2 message")
 
@@ -66,4 +72,11 @@ selectLoop:
 			break selectLoop
 		}
 	}
+
+	chBool := make(chan bool)
+	go someWorker(chBool)
+
+	<-chBool
+
+	fmt.Println("demo end")
 }
