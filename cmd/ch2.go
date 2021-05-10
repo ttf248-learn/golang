@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func sendInt(ch chan int, input int) {
 	ch <- input
@@ -19,6 +22,16 @@ func rangChannel() {
 	}
 }
 
+func intChannelWorker(ch chan int, input int) {
+	time.Sleep(1 * time.Millisecond)
+	ch <- input
+}
+
+func strChannelWorker(ch chan string, input string) {
+	time.Sleep(1 * time.Millisecond)
+	ch <- input
+}
+
 func main() {
 	fmt.Println("ch2 message")
 
@@ -34,4 +47,23 @@ func main() {
 	fmt.Println(<-ch)
 
 	rangChannel() // 如果用 go 启动当前函数，由于是异步，程序直接退出到了，会导致数据无法正常打印
+
+	chInt := make(chan int)
+	chStr := make(chan string)
+
+	go intChannelWorker(chInt, 100)
+	go strChannelWorker(chStr, "xiangtianlong")
+
+selectLoop:
+	for true {
+		select {
+		case <-chInt:
+			fmt.Println("get int message")
+		case <-chStr:
+			fmt.Println("get str message")
+		default:
+			fmt.Println("break select loop")
+			break selectLoop
+		}
+	}
 }
