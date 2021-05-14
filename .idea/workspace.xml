@@ -53,7 +53,7 @@
     <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Go Build.micro_client">
+  <component name="RunManager" selected="Go Build.micro_server">
     <configuration name="micro_client" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
       <module name="awesomeProject" />
       <working_directory value="$PROJECT_DIR$" />
@@ -109,8 +109,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.micro_client" />
         <item itemvalue="Go Build.micro_server" />
+        <item itemvalue="Go Build.micro_client" />
         <item itemvalue="Makefile Target.list_people_gotest" />
         <item itemvalue="Go Test.add_person_test.go" />
         <item itemvalue="Go Test.list_people_test.go" />

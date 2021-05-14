@@ -13,10 +13,6 @@ import (
 	message "go-base-learning/endpoint"
 )
 
-const (
-	svcName = `lb.student.endpoint`
-)
-
 func main() {
 	consulRegistry := consul.NewRegistry(registry.Addrs("localhost:8500"))
 
@@ -26,7 +22,7 @@ func main() {
 
 	svc.Init()
 
-	studentService := message.NewStudentService(svcName, svc.Client())
+	studentService := message.NewStudentService("lb.student.endpoint", svc.Client())
 
 	res, err := studentService.GetStudent(context.TODO(), &message.StudentRequest{Name: "davie"})
 	if err != nil {
