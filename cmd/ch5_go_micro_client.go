@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"go-base-learning/global"
 	"time"
 
 	"github.com/micro/go-micro/registry"
@@ -14,7 +15,7 @@ import (
 )
 
 func main() {
-	consulRegistry := consul.NewRegistry(registry.Addrs("localhost:8500"))
+	consulRegistry := consul.NewRegistry(registry.Addrs(global.GetConsulInfo()))
 
 	svc := micro.NewService(
 		micro.Name("student.client"),

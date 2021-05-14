@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	message "go-base-learning/endpoint"
+	"go-base-learning/global"
 	"log"
 
 	"github.com/micro/go-micro/registry"
@@ -50,7 +51,7 @@ const (
 
 func main() {
 
-	consulRegistry := consul.NewRegistry(registry.Addrs("localhost:8500"))
+	consulRegistry := consul.NewRegistry(registry.Addrs(global.GetConsulInfo()))
 
 	//创建一个新的服务对象实例
 	service := micro.NewService(

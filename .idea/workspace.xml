@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9849fef-01d2-43d6-9ccf-0d8e2d9aaffb" name="Default Changelist" comment="feat: go-micro 1.7.0 client and server">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/ch5_go_micro_client.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/ch5_go_micro_server.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/endpoint/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/endpoint/student.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/endpoint/student.pb.micro.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/endpoint/student.pb.validate.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/endpoint/student.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+    <list default="true" id="f9849fef-01d2-43d6-9ccf-0d8e2d9aaffb" name="Default Changelist" comment="fix: 控制台增加参数，选择 consul 连接地址">
+      <change afterPath="$PROJECT_DIR$/global/global.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/ch5_go_micro_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/ch5_go_micro_client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/ch5_go_micro_server.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/ch5_go_micro_server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +22,14 @@
   <component name="GOROOT" url="file:///usr/local/go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
@@ -53,10 +55,11 @@
     <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Go Build.micro_server">
+  <component name="RunManager" selected="Go Build.micro_client">
     <configuration name="micro_client" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
       <module name="awesomeProject" />
       <working_directory value="$PROJECT_DIR$" />
+      <parameters value="remote" />
       <kind value="FILE" />
       <package value="go-base-learning/cmd" />
       <directory value="$PROJECT_DIR$" />
@@ -66,6 +69,7 @@
     <configuration name="micro_server" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
       <module name="awesomeProject" />
       <working_directory value="$PROJECT_DIR$" />
+      <parameters value="remote" />
       <kind value="FILE" />
       <package value="go-base-learning/cmd" />
       <directory value="$PROJECT_DIR$" />
@@ -102,15 +106,15 @@
     </configuration>
     <list>
       <item itemvalue="Go Build.micro_server" />
+      <item itemvalue="Go Build.micro_client" />
       <item itemvalue="Go Test.add_person_test.go" />
       <item itemvalue="Go Test.list_people_test.go" />
       <item itemvalue="Makefile Target.list_people_gotest" />
-      <item itemvalue="Go Build.micro_client" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.micro_server" />
         <item itemvalue="Go Build.micro_client" />
+        <item itemvalue="Go Build.micro_server" />
         <item itemvalue="Makefile Target.list_people_gotest" />
         <item itemvalue="Go Test.add_person_test.go" />
         <item itemvalue="Go Test.list_people_test.go" />
@@ -137,7 +141,9 @@
     <MESSAGE value="feat: creat local module and base usage" />
     <MESSAGE value="feat: google protocol buffer base usages" />
     <MESSAGE value="feat: go-micro 1.7.0 client and server" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: go-micro 1.7.0 client and server" />
+    <MESSAGE value="fix: const 常量定义重名导致的IDE规则校验报警" />
+    <MESSAGE value="fix: 控制台增加参数，选择 consul 连接地址" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 控制台增加参数，选择 consul 连接地址" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
