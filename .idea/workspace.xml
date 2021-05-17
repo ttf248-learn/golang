@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f9849fef-01d2-43d6-9ccf-0d8e2d9aaffb" name="Default Changelist" comment="fix: 控制台增加参数，选择 consul 连接地址">
-      <change afterPath="$PROJECT_DIR$/global/global.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/ch6_go_micro_greeter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/ch6_go_micro_greeter_client.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/endpoint/greeter.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mock/ch6_go_micro_greeter_mock.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/ch5_go_micro_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/ch5_go_micro_client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/ch5_go_micro_server.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/ch5_go_micro_server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,17 +58,35 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.make" />
   </component>
-  <component name="RunManager" selected="Go Build.micro_client">
-    <configuration name="micro_client" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+  <component name="RunManager" selected="Go Build.ch1 base">
+    <configuration name="ch1 base" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+      <module name="awesomeProject" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="go-base-learning/cmd" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/cmd/ch1_base.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="micro greeter client mock" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+      <module name="awesomeProject" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="go-base-learning/cmd" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/cmd/ch6_go_micro_greeter_client.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="micro greeter service" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
       <module name="awesomeProject" />
       <working_directory value="$PROJECT_DIR$" />
       <parameters value="remote" />
       <kind value="FILE" />
       <package value="go-base-learning/cmd" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/cmd/ch5_go_micro_client.go" />
+      <filePath value="$PROJECT_DIR$/cmd/ch6_go_micro_greeter.go" />
       <method v="2" />
     </configuration>
     <configuration name="micro_server" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
@@ -76,48 +99,26 @@
       <filePath value="$PROJECT_DIR$/cmd/ch5_go_micro_server.go" />
       <method v="2" />
     </configuration>
-    <configuration name="add_person_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="awesomeProject" />
-      <working_directory value="$PROJECT_DIR$/proto" />
-      <root_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <package value="go-base-learning" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/proto/add_person_test.go" />
-      <framework value="gotest" />
-      <method v="2" />
-    </configuration>
-    <configuration name="list_people_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="awesomeProject" />
-      <working_directory value="$PROJECT_DIR$/proto" />
-      <root_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <package value="go-base-learning" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/proto/list_people_test.go" />
-      <framework value="gotest" />
-      <method v="2" />
-    </configuration>
-    <configuration name="list_people_gotest" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
-      <makefile filename="$PROJECT_DIR$/proto/Makefile" target="list_people_gotest" workingDirectory="" arguments="">
+    <configuration name="Makefile" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="" workingDirectory="" arguments="">
         <envs />
       </makefile>
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Go Build.micro_server" />
-      <item itemvalue="Go Build.micro_client" />
-      <item itemvalue="Go Test.add_person_test.go" />
-      <item itemvalue="Go Test.list_people_test.go" />
-      <item itemvalue="Makefile Target.list_people_gotest" />
+      <item itemvalue="Go Build.micro greeter service" />
+      <item itemvalue="Go Build.micro greeter client mock" />
+      <item itemvalue="Go Build.ch1 base" />
+      <item itemvalue="Makefile Target.Makefile" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.micro_client" />
+        <item itemvalue="Go Build.ch1 base" />
+        <item itemvalue="Go Build.micro greeter client mock" />
+        <item itemvalue="Go Build.micro greeter service" />
+        <item itemvalue="Makefile Target.Makefile" />
         <item itemvalue="Go Build.micro_server" />
-        <item itemvalue="Makefile Target.list_people_gotest" />
-        <item itemvalue="Go Test.add_person_test.go" />
-        <item itemvalue="Go Test.list_people_test.go" />
       </list>
     </recent_temporary>
   </component>
