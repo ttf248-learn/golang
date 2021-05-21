@@ -12,4 +12,6 @@ require (
 	github.com/pkg/errors v0.9.1 // indirect
 	google.golang.org/genproto v0.0.0-20191216164720-4f79533eabd1 // indirect
 	google.golang.org/protobuf v1.26.0
+	gorm.io/driver/sqlite v1.1.4
+	gorm.io/gorm v1.21.10
 )
