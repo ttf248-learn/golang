@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9849fef-01d2-43d6-9ccf-0d8e2d9aaffb" name="Default Changelist" comment="feat: go micro mock demo">
-      <change afterPath="$PROJECT_DIR$/cmd/ch7_gocron.go" afterDir="false" />
+    <list default="true" id="f9849fef-01d2-43d6-9ccf-0d8e2d9aaffb" name="Default Changelist" comment="feat: go crontab at 某个时刻执行任务">
+      <change afterPath="$PROJECT_DIR$/cmd/ch8_gorm.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
@@ -58,7 +58,7 @@
     <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.make" />
   </component>
-  <component name="RunManager" selected="Go Build.ch7_gocron">
+  <component name="RunManager" selected="Go Build.ch8_gorm">
     <configuration name="ch1 base" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
       <module name="awesomeProject" />
       <working_directory value="$PROJECT_DIR$" />
@@ -75,6 +75,15 @@
       <package value="go-base-learning/cmd" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/cmd/ch7_gocron.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ch8_gorm" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+      <module name="awesomeProject" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="go-base-learning/cmd" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/cmd/ch8_gorm.go" />
       <method v="2" />
     </configuration>
     <configuration name="micro greeter client mock" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
@@ -96,26 +105,20 @@
       <filePath value="$PROJECT_DIR$/cmd/ch6_go_micro_greeter.go" />
       <method v="2" />
     </configuration>
-    <configuration name="Makefile" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
-      <makefile filename="$PROJECT_DIR$/Makefile" target="" workingDirectory="" arguments="">
-        <envs />
-      </makefile>
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Go Build.micro greeter service" />
       <item itemvalue="Go Build.micro greeter client mock" />
       <item itemvalue="Go Build.ch1 base" />
-      <item itemvalue="Makefile Target.Makefile" />
       <item itemvalue="Go Build.ch7_gocron" />
+      <item itemvalue="Go Build.ch8_gorm" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.ch8_gorm" />
         <item itemvalue="Go Build.ch7_gocron" />
         <item itemvalue="Go Build.ch1 base" />
         <item itemvalue="Go Build.micro greeter client mock" />
         <item itemvalue="Go Build.micro greeter service" />
-        <item itemvalue="Makefile Target.Makefile" />
       </list>
     </recent_temporary>
   </component>
@@ -142,10 +145,23 @@
     <MESSAGE value="fix: const 常量定义重名导致的IDE规则校验报警" />
     <MESSAGE value="fix: 控制台增加参数，选择 consul 连接地址" />
     <MESSAGE value="feat: go micro mock demo" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: go micro mock demo" />
+    <MESSAGE value="feat: go crontab demo" />
+    <MESSAGE value="feat: go crontab at 某个时刻执行任务" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: go crontab at 某个时刻执行任务" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/cmd/ch8_gorm.go</url>
+          <line>35</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/awesomeProject$TestWritePersonWritesPerson_in_go_base_learning_proto.out" NAME="TestWritePersonWritesPerson in go-base-learning/proto Coverage Results" MODIFIED="1620807096696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
