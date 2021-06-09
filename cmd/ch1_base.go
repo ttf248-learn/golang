@@ -17,7 +17,17 @@ const (
 )
 
 func main() {
+	// 变量申明
+	var var1 = 100
+	var var2 = var1
 
+	// 声明变量不做初始化
+	var var3 int
+	var3 = var2
+
+	fmt.Println(var1, var2, var3)
+
+	// 常量定义的时候可以不用申明类型
 	const conStr string = "const string"
 	const conStr2 = "const string 2"
 	fmt.Println(conStr, conStr2, Unknown, Female, Male, One, Two)
