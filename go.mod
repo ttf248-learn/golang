@@ -13,6 +13,7 @@ require (
 	github.com/shopspring/decimal v1.2.0
 	google.golang.org/genproto v0.0.0-20191216164720-4f79533eabd1 // indirect
 	google.golang.org/protobuf v1.26.0
+	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
 	gorm.io/driver/mysql v1.4.6
 	gorm.io/driver/postgres v1.1.0
 	gorm.io/driver/sqlite v1.1.4

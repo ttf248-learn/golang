@@ -3,10 +3,13 @@ package main
 import (
 	"fmt"
 	"go-base-learning/data_provider/dao"
+	"io/ioutil"
+	"log"
 	"strconv"
 	"time"
 
 	"github.com/shopspring/decimal"
+	"gopkg.in/yaml.v3"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -28,8 +31,45 @@ func AutoNumber() func() decimal.Decimal {
 	}
 }
 
+// 太久没用，都忘了，首字符大小写控制公开私有，Unmarshal 发射只能发生在公开的成员上
+type MysqlConfig struct {
+	Username string `yaml:"username"`
+	Password string `yaml:"password"`
+	Ip       string `yaml:"ip"`
+	Port     string `yaml:"port"`
+	Db_name  string `yaml:"db_name"`
+}
+
 func main() {
-	dsn := "root:sErjf&eNh9zv4CSV@tcp(192.168.19.146:5306)/ykcz_trade?charset=utf8mb4&parseTime=True&loc=Local"
+
+	// 读取文件所有内容装到 []byte 中
+	bytes, err := ioutil.ReadFile("conf.yaml")
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	// 创建配置文件的结构体
+	mysql_config := MysqlConfig{}
+
+	// 调用 Unmarshall 去解码文件内容
+	// 注意要传配置结构体的指针进去
+	err = yaml.Unmarshal(bytes, &mysql_config)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	// 调用 Unmarshall 对解码出来的 confDemo 进行编码
+	// 返回的 yml 是 []byte 类型的
+	yml, err := yaml.Marshal(mysql_config)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	// 输出结果
+	fmt.Printf("%#v\n", mysql_config)
+	fmt.Printf("%s\n", yml)
+
+	dsn := mysql_config.Username + ":" + mysql_config.Password + "@tcp(" + mysql_config.Ip + ":" + mysql_config.Port + ")/" + mysql_config.Db_name + "?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
 		SkipDefaultTransaction: true,
 		PrepareStmt:            true,
