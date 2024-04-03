@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/yamllint.json": "file:///g%3A/Project/golang-practice/cmd/conf.yaml"
+    }
+}
