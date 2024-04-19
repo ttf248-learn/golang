@@ -4,6 +4,9 @@ import (
 	"context"
 	"fmt"
 	"go-base-learning/global"
+	"os"
+	"os/signal"
+	"syscall"
 	"time"
 
 	"github.com/micro/go-micro/registry"
@@ -28,37 +31,50 @@ func autoAddIndex() func() int {
 }
 
 func main() {
-	consulRegistry := consul.NewRegistry(registry.Addrs(global.GetConsulInfo()))
+	// 创建 Consul 注册中心
+	consulRegistry := consul.NewRegistry(
+		registry.Addrs(global.GetConsulInfo()),
+	)
 
+	// 创建微服务
 	svc := micro.NewService(
 		micro.Name("student.client"),
-		micro.Registry(consulRegistry))
+		micro.Registry(consulRegistry),
+	)
 
-	var bench [100]BenchTime
-	index := autoAddIndex()
-	now := time.Now()
+	// 初始化微服务
 	svc.Init()
-	bench[index()] = BenchTime{"init server", time.Since(now)}
 
-	studentService := message.NewStudentService("lb.student.endpoint", svc.Client())
-	bench[index()] = BenchTime{"new client", time.Since(now)}
+	// 创建学生服务客户端
+	studentService := message.NewStudentService("dev.student.endpoint", svc.Client())
 
-	res, err := studentService.GetStudent(context.TODO(), &message.StudentRequest{Name: "davie"})
-	bench[index()] = BenchTime{"call server", time.Since(now)}
+	// 创建一个信号接收器，捕获中断信号
+	stopChan := make(chan os.Signal, 1)
+	signal.Notify(stopChan, syscall.SIGINT, syscall.SIGTERM)
 
+	// 创建一个 context ，用于跟踪信号
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+
+	// 在新的 goroutine 中等待中断信号
+	go func() {
+		<-stopChan // 当接收到信号时，停止等待
+		fmt.Println("Received stop signal, shutting down...")
+
+		// 执行清理工作，关闭微服务
+		svc.Server().Stop()
+		cancel() // 取消 context，告诉其他 goroutine 退出
+	}()
+
+	// 调用学生服务的 GetStudent 方法
+	res, err := studentService.GetStudent(ctx, &message.StudentRequest{Name: "davie"})
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
+	// 打印学生信息
 	fmt.Println(res.Name)
 	fmt.Println(res.Classes)
 	fmt.Println(res.Grade)
-	//time.Sleep(50 * time.Second)
-
-	for index, item := range bench {
-		if item.value != 0 {
-			fmt.Println(index, item.name, item.value.Microseconds())
-		}
-	}
 }
