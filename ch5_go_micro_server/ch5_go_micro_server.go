@@ -14,11 +14,11 @@ import (
 	"github.com/micro/go-micro"
 )
 
-//学生服务管理实现
+// 学生服务管理实现
 type StudentManager struct {
 }
 
-//获取学生信息的服务接口实现
+// 获取学生信息的服务接口实现
 func (sm *StudentManager) GetStudent(ctx context.Context, request *message.StudentRequest, response *message.Student) error {
 
 	//tom
@@ -46,7 +46,7 @@ func (sm *StudentManager) GetStudent(ctx context.Context, request *message.Stude
 }
 
 const (
-	svcName = `lb.student.endpoint`
+	svcName = `dev.student.endpoint`
 )
 
 func main() {
