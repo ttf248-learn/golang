@@ -19,5 +19,13 @@
             "program": "${workspaceFolder}/ch13_go_zero_api/ch13gozeroapi.go",
             "args": ["-f", "${workspaceFolder}/ch13_go_zero_api/etc/ch13gozeroapi-api.yaml"]
         },
+        {
+            "name": "ch14_go_zero_rpc",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/ch14_go_zero_rpc/ch14gozerorpc.go",
+            "args": ["-f", "${workspaceFolder}/ch14_go_zero_rpc/etc/ch14gozerorpc.yaml"]
+        },
     ]
 }

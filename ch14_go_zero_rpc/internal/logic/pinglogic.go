@@ -24,7 +24,7 @@ func NewPingLogic(ctx context.Context, svcCtx *svc.ServiceContext) *PingLogic {
 }
 
 func (l *PingLogic) Ping(in *ch14_go_zero_rpc.Request) (*ch14_go_zero_rpc.Response, error) {
-	// todo: add your logic here and delete this line
-
-	return &ch14_go_zero_rpc.Response{}, nil
+	return &ch14_go_zero_rpc.Response{
+		Pong: "pong",
+	}, nil
 }
