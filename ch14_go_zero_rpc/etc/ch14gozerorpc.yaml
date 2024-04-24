@@ -3,7 +3,7 @@ ListenOn: 0.0.0.0:8080
 Mode: dev
 
 
-# Etcd:
-#   Hosts:
-#   - 127.0.0.1:2379
-#   Key: ch14gozerorpc.rpc
+Etcd:
+  Hosts:
+  - 192.168.221.131:2379
+  Key: ch14gozerorpc.rpc
