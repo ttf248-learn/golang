@@ -12,12 +12,12 @@
             "program": "${file}"
         },
         {
-            "name": "ch13_go_zero_greet",
+            "name": "ch13_go_zero_api",
             "type": "go",
             "request": "launch",
             "mode": "debug",
-            "program": "${workspaceFolder}/ch13_go_zero_greet/ch13gozerogreet.go",
-            "args": ["-f", "${workspaceFolder}/ch13_go_zero_greet/etc/ch13gozerogreet-api.yaml"]
+            "program": "${workspaceFolder}/ch13_go_zero_api/ch13gozeroapi.go",
+            "args": ["-f", "${workspaceFolder}/ch13_go_zero_api/etc/ch13gozeroapi-api.yaml"]
         },
     ]
 }

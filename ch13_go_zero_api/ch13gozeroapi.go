@@ -4,15 +4,15 @@ import (
 	"flag"
 	"fmt"
 
-	"go-base-learning/ch13_go_zero_greet/internal/config"
-	"go-base-learning/ch13_go_zero_greet/internal/handler"
-	"go-base-learning/ch13_go_zero_greet/internal/svc"
+	"go-base-learning/ch13_go_zero_api/internal/config"
+	"go-base-learning/ch13_go_zero_api/internal/handler"
+	"go-base-learning/ch13_go_zero_api/internal/svc"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/rest"
 )
 
-var configFile = flag.String("f", "etc/ch13gozerogreet-api.yaml", "the config file")
+var configFile = flag.String("f", "etc/ch13gozeroapi-api.yaml", "the config file")
 
 func main() {
 	flag.Parse()
