@@ -10,6 +10,14 @@
             "request": "launch",
             "mode": "debug",
             "program": "${file}"
-        }
+        },
+        {
+            "name": "ch13_go_zero_greet",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/ch13_go_zero_greet/ch13gozerogreet.go",
+            "args": ["-f", "${workspaceFolder}/ch13_go_zero_greet/etc/ch13gozerogreet-api.yaml"]
+        },
     ]
 }
