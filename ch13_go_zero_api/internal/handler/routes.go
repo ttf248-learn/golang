@@ -4,7 +4,7 @@ package handler
 import (
 	"net/http"
 
-	"go-base-learning/ch13_go_zero_greet/internal/svc"
+	"go-base-learning/ch13_go_zero_api/internal/svc"
 
 	"github.com/zeromicro/go-zero/rest"
 )
@@ -15,7 +15,7 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 			{
 				Method:  http.MethodGet,
 				Path:    "/from/:name",
-				Handler: Ch13_go_zero_greetHandler(serverCtx),
+				Handler: Ch13_go_zero_apiHandler(serverCtx),
 			},
 		},
 	)

@@ -8,8 +8,8 @@ type Response {
 	Message string `json:"message"`
 }
 
-service ch13_go_zero_greet-api {
-	@handler Ch13_go_zero_greetHandler
+service ch13_go_zero_api-api {
+	@handler Ch13_go_zero_apiHandler
 	get /from/:name (Request) returns (Response)
 }
 

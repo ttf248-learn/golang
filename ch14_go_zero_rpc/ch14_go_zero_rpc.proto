@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ch14_go_zero_rpc;
+option go_package="./ch14_go_zero_rpc";
+
+message Request {
+  string ping = 1;
+}
+
+message Response {
+  string pong = 1;
+}
+
+service Ch14_go_zero_rpc {
+  rpc Ping(Request) returns(Response);
+}
